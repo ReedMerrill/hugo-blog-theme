@@ -21,5 +21,9 @@
     {{ end }}
     {{ end }}
     <h2 class="author-name">{{ .Site.Params.author.name }}</h2>
-    <p class="author-bio">{{ .Site.Params.author.description }}</p>
+    <p class="author-bio">
+      {{ with site.GetPage "features/short-bio" }}
+        {{ .Content }}
+      {{ end }}
+    </p>
 </div>
